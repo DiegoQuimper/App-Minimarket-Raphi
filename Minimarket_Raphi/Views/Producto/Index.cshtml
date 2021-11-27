@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Minimarket_Raphi.Models.Producto>
+
+@{
+    ViewBag.Title = "Administración de Productos";
+}
+<div class="jumbotron">
+    <h2>Tabla Producto</h2>
+    @Html.ActionLink("NuevoProducto", "NuevoProducto", "Producto", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("ActualizarProducto", "ActualizarProducto", "Producto", null, new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("EliminarProducto", "EliminarProducto", "Producto", null, new { @class = "btn btn-primary btn-lg" })
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo_Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_SubfamiliaProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_SubfamiliaProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
